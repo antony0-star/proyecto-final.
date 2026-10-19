@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eclipse Artesano | Arte hecho a mano</title>
+
+<!-- FUENTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#110e08;
+    color:#2b211b;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+::selection{
+    background:#f7f1ee;
+    color:rgb(116, 77, 77);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(243, 158, 0, 0.96);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #000000;
+
+    box-shadow:0 4px 20px rgba(60,35,15,0.08);
+}
+
+.header-container{
+    max-width:1250px;
+    margin:auto;
+
+    min-height:78px;
+
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+
+/* LOGO */
+
+.logo{
+    text-decoration:none;
+    color:#3a2114;
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+
+    background:#e76b13;
+
+    color:rgb(253, 253, 253);
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.logo-text{
+    font-family:'Permanent Marker', cursive;
+    font-size:27px;
+}
+
+
+/* NAV */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#050505;
+
+    font-size:14px;
+    font-weight:600;
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:2px;
+
+    background:#b86b35;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#b86b35;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+/* CARRITO */
+
+.cart-button{
+    border:none;
+
+    background:#080404;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-family:'Poppins';
+
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    transition:0.3s;
+}
+
+.cart-button:hover{
+    background:#b86b35;
+    transform:translateY(-2px);
+}
+
+.cart-number{
+    background:#e8a15c;
+
+    color:#61220d;
+
+    min-width:22px;
+    height:22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:650px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(30,17,10,0.86),
+        rgba(30,17,10,0.45),
+        rgba(30,17,10,0.15)
+    ),
+
+    url("https://images.unsplash.com/photo-1513475382585-d06e58bcb0ff");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    width:1250px;
+    max-width:100%;
+
+    margin:auto;
+
+    padding:60px 40px;
+
+    color:white;
+}
+
+.hero-small{
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+    backdrop-filter:blur(5px);
+}
+
+.hero h1{
+    font-family:'DM Serif Display', serif;
+
+    font-size:78px;
+
+    line-height:1.05;
+
+    max-width:750px;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#e6a15d;
+}
+
+.hero p{
+    max-width:620px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#f4eee8;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#c8783d;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#e09554;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.6);
+
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:#3a2114;
+}
+
+
+/* =====================================================
+   BARRA DE CONFIANZA
+===================================================== */
+
+.features{
+    background:#3a2114;
+
+    color:white;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    max-width:100%;
+}
+
+.feature{
+    padding:25px;
+
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,0.1);
+}
+
+.feature:last-child{
+    border:none;
+}
+
+.feature-icon{
+    font-size:27px;
+
+    margin-bottom:7px;
+}
+
+.feature h3{
+    font-size:15px;
+
+    margin-bottom:4px;
+}
+
+.feature p{
+    font-size:12px;
+
+    color:#d9c8ba;
+}
+
+
+/* =====================================================
+   SECCIÓN GENERAL
+===================================================== */
+
+.section{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:90px 25px;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.section-label{
+    color:#b86b35;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-family:'DM Serif Display', serif;
+
+    font-size:48px;
+
+    color:#faf7f6;
+}
+
+.section-title p{
+    max-width:600px;
+
+    margin:12px auto 0;
+
+    color:#fcfaf9;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   CATEGORÍAS
+===================================================== */
+
+.categories{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.category{
+    height:390px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(50,30,15,0.12);
+}
+
+.category img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.6s;
+}
+
+.category:hover img{
+    transform:scale(1.08);
+}
+
+.category::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        transparent 35%,
+        rgba(30,15,5,0.88)
+    );
+}
+
+.category-content{
+    position:absolute;
+
+    z-index:2;
+
+    left:25px;
+    right:25px;
+    bottom:25px;
+
+    color:white;
+}
+
+.category-content h3{
+    font-family:'DM Serif Display',serif;
+
+    font-size:30px;
+
+    margin-bottom:7px;
+}
+
+.category-content p{
+    font-size:13px;
+
+    color:#eee;
+
+    margin-bottom:14px;
+}
+
+.category-link{
+    color:#f1b276;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   HISTORIA
+===================================================== */
+
+.story{
+    background:#eee0cd;
+}
+
+.story-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:90px 25px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.story-image{
+    height:500px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.story-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.story-text .section-label{
+    margin-bottom:10px;
+}
+
+.story-text h2{
+    font-family:'DM Serif Display',serif;
+
+    font-size:50px;
+
+    color:#3a2114;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.story-text p{
+    color:#66564a;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.story-button{
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:13px 22px;
+
+    background:#3a2114;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.story-button:hover{
+    background:#b86b35;
+}
+
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.stats{
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding:70px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    text-align:center;
+
+    gap:30px;
+}
+
+.stat h3{
+    font-size:40px;
+
+    color:#b86b35;
+
+    font-family:'DM Serif Display',serif;
+}
+
+.stat p{
+    color:#6f6258;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+    margin:30px auto 90px;
+
+    max-width:1150px;
+
+    min-height:300px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(55,28,12,0.94),
+        rgba(55,28,12,0.55)
+    ),
+    url("https://images.unsplash.com/photo-1452860606245-08befc0ff44b");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    padding:50px;
+
+    color:white;
+}
+
+.cta-content{
+    max-width:600px;
+}
+
+.cta h2{
+    font-family:'DM Serif Display',serif;
+
+    font-size:45px;
+
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#eadfd6;
+
+    line-height:1.7;
+
+    margin-bottom:22px;
+}
+
+
+/* =====================================================
+   CARRITO
+===================================================== */
+
+.overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+
+    z-index:1999;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.cart-panel{
+    position:fixed;
+
+    right:-450px;
+    top:0;
+
+    width:420px;
+    max-width:100%;
+
+    height:100vh;
+
+    background:#fffaf4;
+
+    z-index:2000;
+
+    box-shadow:-10px 0 35px rgba(0,0,0,0.2);
+
+    transition:0.4s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-panel.active{
+    right:0;
+}
+
+.cart-header{
+    padding:25px;
+
+    border-bottom:1px solid #eadbc8;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.cart-header h2{
+    font-family:'DM Serif Display',serif;
+
+    font-size:28px;
+
+    color:#3a2114;
+}
+
+.close-cart{
+    width:36px;
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#eee1d2;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.close-cart:hover{
+    background:#3a2114;
+    color:white;
+}
+
+.cart-content{
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:20px 25px;
+}
+
+.empty-cart{
+    text-align:center;
+
+    padding:70px 20px;
+
+    color:#8b7b6e;
+}
+
+.empty-cart-icon{
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.cart-item{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eadbc8;
+}
+
+.cart-item h4{
+    color:#3a2114;
+
+    font-size:14px;
+}
+
+.cart-item p{
+    color:#b86b35;
+
+    font-size:13px;
+
+    margin-top:4px;
+}
+
+.remove-item{
+    border:none;
+
+    background:#f1e4d7;
+
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.remove-item:hover{
+    background:#d95757;
+    color:white;
+}
+
+.cart-footer{
+    padding:25px;
+
+    border-top:1px solid #eadbc8;
+
+    background:white;
+}
+
+.total-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#3a2114;
+
+    margin-bottom:18px;
+}
+
+.buy-button{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#3a2114;
+
+    color:white;
+
+    font-family:'Poppins';
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.buy-button:hover{
+    background:#b86b35;
+}
+
+.clear-button{
+    width:100%;
+
+    margin-top:8px;
+
+    padding:10px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#88786b;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#24150d;
+
+    color:white;
+
+    padding:60px 25px 25px;
+}
+
+.footer-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+.footer-logo{
+    font-family:'Permanent Marker',cursive;
+
+    font-size:28px;
+
+    color:#e6a15d;
+
+    margin-bottom:12px;
+}
+
+.footer-column h3{
+    margin-bottom:15px;
+
+    font-size:16px;
+}
+
+.footer-column a{
+    display:block;
+
+    color:#cbbdb1;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:0.3s;
+}
+
+.footer-column a:hover{
+    color:#e6a15d;
+}
+
+.footer-description{
+    max-width:400px;
+
+    color:#b8aaa0;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.copyright{
+    max-width:1200px;
+
+    margin:40px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+
+    text-align:center;
+
+    color:#887b73;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .header-container{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        padding:15px;
+    }
+
+    nav{
+        order:3;
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .category{
+        height:350px;
+    }
+
+    .story-container{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .story-image{
+        height:400px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .logo-text{
+        font-size:22px;
+    }
+
+    .header-container{
+        gap:12px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .cart-button{
+        padding:10px 14px;
+
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-content{
+        padding:40px 22px;
+    }
+
+    .hero h1{
+        font-size:47px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:none;
+
+        border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .section{
+        padding:65px 20px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+    .story-text h2{
+        font-size:40px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        margin:20px;
+
+        padding:35px 25px;
+
+        min-height:350px;
+    }
+
+    .cta h2{
+        font-size:38px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header-container">
+
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+    ✦
+</div>
+
+<div class="logo-text">
+    Eclipse Artesano
+</div>
+
+</a>
+
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+
+<a href="#categorias">Productos</a>
+
+<a href="nosotros 2.html">Nosotros</a>
+
+<a href="contacto.html">Contacto</a>
+
+</nav>
+
+
+<button class="cart-button" onclick="abrirCarrito()">
+
+🛒
+
+Carrito
+
+<span class="cart-number" id="contador">
+0
+</span>
+
+</button>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<span class="hero-small">
+    ✦ ARTESANÍA CON IDENTIDAD
+</span>
+
+<h1>
+    El arte de crear
+    <span>algo único.</span>
+</h1>
+
+<p>
+    Descubrí piezas artesanales creadas con dedicación,
+    inspiración y amor por nuestras tradiciones.
+    Cada producto tiene una historia diferente que contar.
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#categorias" class="btn-primary">
+    Explorar colección
+</a>
+
+<a href="nosotros.html" class="btn-secondary">
+    Conocé nuestra historia
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CARACTERÍSTICAS
+===================================================== -->
+
+<section class="features">
+
+<div class="feature">
+
+<div class="feature-icon">
+    👐
+</div>
+
+<h3>
+    Hecho a mano
+</h3>
+
+<p>
+    Cada pieza recibe atención especial.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+    ✨
+</div>
+
+<h3>
+    Piezas únicas
+</h3>
+
+<p>
+    Diseños con personalidad y carácter.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+    ❤️
+</div>
+
+<h3>
+    Hecho con pasión
+</h3>
+
+<p>
+    Creatividad en cada detalle.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORÍAS
+===================================================== -->
+
+<section class="section" id="categorias">
+
+<div class="section-title">
+
+<div class="section-label">
+    Nuestra colección
+</div>
+
+<h2>
+    Explorá nuestras piezas
+</h2>
+
+<p>
+    Una selección de productos inspirados en el arte,
+    la cultura y la creatividad.
+</p>
+
+</div>
+
+
+<div class="categories">
+
+
+<!-- BARRO -->
+
+<div class="category"
+onclick="window.location.href='barro.html'">
+
+<img
+src="https://macetasdebarro.com.mx/wp-content/uploads/2023/03/articulos-de-barro-1-1024x576.jpg"
+alt="Productos artesanales de barro"
+>
+
+<div class="category-content">
+
+<h3>
+    Manos de barro
+</h3>
+
+<p>
+    Piezas moldeadas con creatividad y dedicación.
+</p>
+
+<span class="category-link">
+    Explorar colección →
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- MAYA -->
+
+<div class="category"
+onclick="window.location.href='TRADICIONAL.HTML'">
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2zsEDaSUH-2pPROerk3r2NvoZAeQPo4wf8Q&s"
+alt="Arte inspirado en la cultura maya"
+>
+
+<div class="category-content">
+
+<h3>
+    Legado Maya
+</h3>
+
+<p>
+    Diseños inspirados en una cultura milenaria.
+</p>
+
+<span class="category-link">
+    Explorar colección →
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- TELAS -->
+
+<div class="category"
+onclick="window.location.href='telas.html'">
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPNyJ3bTOqYYTeYzaBGN27LN4F7hVygeJqjaSVIs45OQ&s=10"
+alt="Tejidos artesanales"
+>
+
+<div class="category-content">
+
+<h3>
+    Casa de tejidos
+</h3>
+
+<p>
+    Colores, hilos y diseños llenos de tradición.
+</p>
+
+<span class="category-link">
+    Explorar colección →
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HISTORIA
+===================================================== -->
+
+<section class="story">
+
+<div class="story-container">
+
+
+<div class="story-image">
+
+<img
+src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b"
+alt="Artesanía hecha a mano"
+>
+
+</div>
+
+
+<div class="story-text">
+
+<div class="section-label">
+    Nuestra esencia
+</div>
+
+<h2>
+    Más que un producto,
+    una historia.
+</h2>
+
+<p>
+    En Eclipse Artesano creemos que los productos
+    hechos a mano tienen algo especial: detrás de cada
+    pieza existe tiempo, creatividad y dedicación.
+</p>
+
+<p>
+    Nuestra misión es acercar el arte artesanal a las
+    personas y dar valor a esos pequeños detalles que
+    hacen que cada pieza sea diferente.
+</p>
+
+<a href="nosotros.html" class="story-button">
+    Conocé más sobre nosotros
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESTADÍSTICAS
+===================================================== -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h3>
+    100%
+</h3>
+
+<p>
+    Creatividad artesanal
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+    3
+</h3>
+
+<p>
+    Colecciones disponibles
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+    ∞
+</h3>
+
+<p>
+    Historias por contar
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="cta-content">
+
+<h2>
+    Encontrá algo especial.
+</h2>
+
+<p>
+    Explorá nuestras colecciones y descubrí
+    una pieza que conecte con tu estilo.
+</p>
+
+<a href="#categorias" class="btn-primary">
+    Ver productos
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OVERLAY
+===================================================== -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="cerrarCarrito()">
+</div>
+
+
+
+<!-- =====================================================
+     CARRITO
+===================================================== -->
+
+<aside
+class="cart-panel"
+id="cartPanel">
+
+
+<div class="cart-header">
+
+<h2>
+    Tu carrito
+</h2>
+
+<button
+class="close-cart"
+onclick="cerrarCarrito()">
+
+✕
+
+</button>
+
+</div>
+
+
+<div
+class="cart-content"
+id="listaCarrito">
+
+<div class="empty-cart">
+
+<div class="empty-cart-icon">
+    🛒
+</div>
+
+<p>
+    Tu carrito está vacío.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+
+<div class="total-row">
+
+<span>
+    Total
+</span>
+
+<span id="total">
+    $0.00
+</span>
+
+</div>
+
+
+<button
+class="buy-button"
+onclick="hacerCompra()">
+
+Finalizar compra
+
+</button>
+
+
+<button
+class="clear-button"
+onclick="vaciarCarrito()">
+
+Vaciar carrito
+
+</button>
+
+
+</div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-container">
+
+
+<div class="footer-column">
+
+<div class="footer-logo">
+    Eclipse Artesano
+</div>
+
+<p class="footer-description">
+    Arte, creatividad y tradición reunidos
+    en piezas hechas con dedicación.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+    Navegación
+</h3>
+
+<a href="#inicio">
+    Inicio
+</a>
+
+<a href="#categorias">
+    Productos
+</a>
+
+<a href="nosotros.html">
+    Nosotros
+</a>
+
+<a href="contacto.html">
+    Contacto
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+    Colecciones
+</h3>
+
+<a href="barro.html">
+    Manos de barro
+</a>
+
+<a href="maya.html">
+    Legado Maya
+</a>
+
+<a href="telas.html">
+    Casa de tejidos
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Eclipse Artesano · Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* ==========================================
+   CARRITO
+========================================== */
+
+let carrito = [];
+
+
+
+/* ==========================================
+   AGREGAR PRODUCTO
+========================================== */
+
+function agregarCarrito(nombre, precio = 0){
+
+    carrito.push({
+
+        nombre: nombre,
+
+        precio: Number(precio)
+
+    });
+
+
+    actualizarCarrito();
+
+    abrirCarrito();
+
+}
+
+
+
+/* ==========================================
+   ACTUALIZAR CARRITO
+========================================== */
+
+function actualizarCarrito(){
+
+    const lista =
+        document.getElementById("listaCarrito");
+
+    const contador =
+        document.getElementById("contador");
+
+    const totalElemento =
+        document.getElementById("total");
+
+
+    contador.innerText = carrito.length;
+
+
+    if(carrito.length === 0){
+
+        lista.innerHTML = `
+
+        <div class="empty-cart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <p>
+                Tu carrito está vacío.
+            </p>
+
+        </div>
+
+        `;
+
+        totalElemento.innerText = "$0.00";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    lista.innerHTML = "";
+
+
+    carrito.forEach((producto, indice) => {
+
+        total += producto.precio;
+
+
+        lista.innerHTML += `
+
+        <div class="cart-item">
+
+            <div>
+
+                <h4>
+                    ${producto.nombre}
+                </h4>
+
+                <p>
+                    $${producto.precio.toFixed(2)}
+                </p>
+
+            </div>
+
+
+            <button
+            class="remove-item"
+            onclick="eliminarProducto(${indice})">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+
+    totalElemento.innerText =
+        "$" + total.toFixed(2);
+
+}
+
+
+
+/* ==========================================
+   ELIMINAR
+========================================== */
+
+function eliminarProducto(indice){
+
+    carrito.splice(indice,1);
+
+    actualizarCarrito();
+
+}
+
+
+
+/* ==========================================
+   ABRIR
+========================================== */
+
+function abrirCarrito(){
+
+    document
+    .getElementById("cartPanel")
+    .classList.add("active");
+
+
+    document
+    .getElementById("overlay")
+    .classList.add("active");
+
+}
+
+
+
+/* ==========================================
+   CERRAR
+========================================== */
+
+function cerrarCarrito(){
+
+    document
+    .getElementById("cartPanel")
+    .classList.remove("active");
+
+
+    document
+    .getElementById("overlay")
+    .classList.remove("active");
+
+}
+
+
+
+/* ==========================================
+   VACIAR
+========================================== */
+
+function vaciarCarrito(){
+
+    if(carrito.length === 0){
+
+        alert("Tu carrito ya está vacío.");
+
+        return;
+
+    }
+
+
+    carrito = [];
+
+    actualizarCarrito();
+
+}
+
+
+
+/* ==========================================
+   COMPRA
+========================================== */
+
+function hacerCompra(){
+
+    if(carrito.length === 0){
+
+        alert(
+            "Tu carrito está vacío.\n\n" +
+            "Agregá un producto para continuar."
+        );
+
+        return;
+
+    }
+
+
+    let total = carrito.reduce(
+
+        (suma, producto) =>
+
+        suma + producto.precio,
+
+        0
+
+    );
+
+
+    alert(
+
+        "¡Gracias por tu compra! 🛍️\n\n" +
+
+        "Total: $" +
+
+        total.toFixed(2)
+
+    );
+
+
+    carrito = [];
+
+    actualizarCarrito();
+
+    cerrarCarrito();
+
+}
+
+
+
+/* ==========================================
+   ESC PARA CERRAR CARRITO
+========================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            cerrarCarrito();
+
+        }
+
+    }
+);
+
+
+</script>
+
+
+</body>
+</html> 
