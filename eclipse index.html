@@ -1142,6 +1142,35 @@ footer{
 
 }
 
+
+.offers-section{max-width:1200px;margin:0 auto;padding:75px 25px}.offers-banner{background:linear-gradient(120deg,#5b2d16,#a94f1d);color:#fff;border-radius:22px;padding:35px;text-align:center;margin-bottom:30px}.offers-banner .section-label{color:#ffd08b}.offers-banner h2{font-family:'DM Serif Display',serif;font-size:42px;margin:8px 0}.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.offer-card{background:#fff8ef;border:1px solid #e7c9a7;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #00000018;transition:.25s}.offer-card:hover{transform:translateY(-5px)}.offer-top{background:#e9a34f;color:#3a2114;padding:18px;text-align:center;font-weight:700;font-size:25px}.offer-body{padding:22px;text-align:center}.offer-body h3{color:#3a2114;margin-bottom:8px}.offer-body p{color:#756153;font-size:14px;line-height:1.6;margin-bottom:17px}.offer-body a{display:inline-block;background:#3a2114;color:#fff;text-decoration:none;padding:11px 18px;border-radius:25px;font-weight:600;font-size:13px}.offer-note{text-align:center;color:#bdb0a3;font-size:12px;margin-top:15px}.register-button{border:2px solid #3a2114;background:transparent;color:#3a2114;padding:10px 14px;border-radius:25px;font:600 13px 'Poppins',sans-serif;cursor:pointer}.register-button:hover{background:#3a2114;color:white}.modal-backdrop{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:3000}.modal-backdrop.active{display:flex}.register-modal{background:#fffaf4;width:100%;max-width:480px;max-height:90vh;overflow:auto;border-radius:20px;padding:28px;box-shadow:0 20px 60px #0005}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.modal-head h2{font:30px 'DM Serif Display',serif;color:#3a2114}.modal-close{border:0;background:#eee1d2;border-radius:50%;width:35px;height:35px;cursor:pointer;font-size:18px}.register-modal>p{color:#79695d;font-size:13px;margin-bottom:18px}.register-form label{display:block;font-size:13px;font-weight:600;color:#4b3425;margin:12px 0 5px}.register-form input{width:100%;padding:12px;border:1px solid #dcc9b7;border-radius:9px;font:14px 'Poppins',sans-serif;background:white}.form-submit{width:100%;margin-top:20px;border:0;background:#3a2114;color:white;padding:13px;border-radius:10px;font:600 14px 'Poppins',sans-serif;cursor:pointer}.client-status{display:none;margin-top:12px;background:#e7f4e5;color:#245b28;padding:12px;border-radius:10px;font-size:13px}@media(max-width:900px){.offers-grid{grid-template-columns:1fr}.offers-banner h2{font-size:34px}}
+
+
+
+/* VIDEOS BREVES DE LAS COLECCIONES - agregado sin reemplazar estilos anteriores */
+.videos-artesanales{
+    max-width:1200px;
+    margin:0 auto;
+    padding:75px 25px 90px;
+}
+.videos-artesanales .videos-intro{text-align:center;margin-bottom:35px;}
+.videos-artesanales .videos-intro h2{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(32px,4vw,46px);
+    color:#faf7f6;
+    margin:8px 0 12px;
+}
+.videos-artesanales .videos-intro p{color:#e8ddd4;line-height:1.7;max-width:700px;margin:auto;}
+.videos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.video-artesanal-card{background:#fffaf4;border-radius:17px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.22);}
+.video-artesanal-card iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#21170f;}
+.video-artesanal-info{padding:19px 20px 22px;}
+.video-artesanal-info h3{font-family:'DM Serif Display',serif;color:#3a2114;font-size:24px;margin-bottom:8px;}
+.video-artesanal-info p{color:#6f5d4f;font-size:13px;line-height:1.7;}
+.video-nota{font-size:12px;color:#b9a99b;text-align:center;margin-top:18px;}
+@media(max-width:850px){.videos-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.videos-grid{grid-template-columns:1fr;}.videos-artesanales{padding:55px 18px;}}
+
 </style>
 
 </head>
@@ -1177,6 +1206,7 @@ footer{
 <a href="#inicio">Inicio</a>
 
 <a href="#categorias">Productos</a>
+<a href="#ofertas">Ofertas</a>
 
 <a href="nosotros 2.html">Nosotros</a>
 
@@ -1185,6 +1215,7 @@ footer{
 </nav>
 
 
+<button class="register-button" onclick="abrirRegistro()">👤 Registro</button>
 <button class="cart-button" onclick="abrirCarrito()">
 
 🛒
@@ -1305,6 +1336,16 @@ Carrito
 </section>
 
 
+
+<!-- OFERTAS ESPECIALES -->
+<section class="offers-section" id="ofertas">
+<div class="offers-banner"><div class="section-label">Promociones de temporada</div><h2>Ofertas que te van a encantar ✨</h2><p>Apoyá el talento artesanal y encontrá algo especial para vos.</p></div>
+<div class="offers-grid">
+<article class="offer-card"><div class="offer-top">10% DE DESCUENTO</div><div class="offer-body"><h3>Detalles de barro</h3><p>Una promoción especial en nuestra colección de piezas de barro.</p><a href="ofertas_barro_10.html">Ver colección →</a></div></article>
+<article class="offer-card"><div class="offer-top">2 × 1</div><div class="offer-body"><h3>Inspiración Maya</h3><p>Promoción demostrativa para descubrir diseños inspirados en la cultura maya.</p><a href="ofertas_maya_2x1.html">Ver colección →</a></div></article>
+<article class="offer-card"><div class="offer-top">15% DE DESCUENTO</div><div class="offer-body"><h3>Colores y tejidos</h3><p>Una oferta especial para darle un toque artesanal a tus espacios.</p><a href="ofertas_tejidos_15.html">Ver colección →</a></div></article>
+</div><p class="offer-note">Promociones de ejemplo para el proyecto escolar; cambiá los descuentos y condiciones según tus precios reales.</p>
+</section>
 
 <!-- =====================================================
      CATEGORÍAS
@@ -1659,6 +1700,43 @@ Vaciar carrito
      FOOTER
 ===================================================== -->
 
+<div class="modal-backdrop" id="registroBackdrop" onclick="cerrarRegistroSiFondo(event)">
+<section class="register-modal" role="dialog" aria-modal="true" aria-labelledby="registroTitulo">
+<div class="modal-head"><h2 id="registroTitulo">Registro de clientes</h2><button class="modal-close" type="button" onclick="cerrarRegistro()" aria-label="Cerrar">✕</button></div>
+<p>Registrate para que tus datos aparezcan en el recibo de compra.</p>
+<form class="register-form" id="formRegistro">
+<label for="clienteNombre">Nombre completo</label><input id="clienteNombre" name="nombre" type="text" autocomplete="name" required maxlength="90" placeholder="Tu nombre">
+<label for="clienteCorreo">Correo electrónico</label><input id="clienteCorreo" name="correo" type="email" autocomplete="email" required maxlength="120" placeholder="correo@ejemplo.com">
+<label for="clienteTelefono">Teléfono (opcional)</label><input id="clienteTelefono" name="telefono" type="tel" autocomplete="tel" maxlength="25" placeholder="Tu número de teléfono">
+<button class="form-submit" type="submit">Guardar registro</button></form><div class="client-status" id="clienteEstado"></div>
+</section></div>
+
+
+
+<!-- VIDEOS BREVES DE CADA COLECCIÓN: sección agregada; no reemplaza las secciones anteriores -->
+<section class="videos-artesanales" id="videos-artesanales">
+  <div class="videos-intro">
+    <div class="section-label">Conocé cómo se crea</div>
+    <h2>El arte detrás de cada pieza 🎬</h2>
+    <p>Mirá estos videos breves para descubrir algunas técnicas artesanales relacionadas con nuestras colecciones.</p>
+  </div>
+  <div class="videos-grid">
+    <article class="video-artesanal-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/OHsKK-Ds-qk?start=0&end=45&rel=0" title="Video breve de elaboración de una olla de barro" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="video-artesanal-info"><h3>🏺 Manos de barro</h3><p>Observá cómo se moldea el barro para crear una pieza artesanal. El video comienza desde el inicio y está configurado para mostrar un fragmento breve.</p></div>
+    </article>
+    <article class="video-artesanal-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/SGudwHVvFpw?start=0&end=45&rel=0" title="Demostración de tejido maya tradicional" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="video-artesanal-info"><h3>🗿 Legado Maya</h3><p>Conocé una demostración de tejido tradicional maya y una técnica cultural que se conserva a través de generaciones.</p></div>
+    </article>
+    <article class="video-artesanal-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/7cMs2CVNGCQ?start=0&end=45&rel=0" title="Video breve de un telar artesanal en El Salvador" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="video-artesanal-info"><h3>🧵 Casa de tejidos</h3><p>Descubrí cómo se elaboran telas típicas de colores en un telar artesanal de El Salvador.</p></div>
+    </article>
+  </div>
+  <p class="video-nota">Los videos se reproducen desde YouTube; necesitás conexión a internet para verlos.</p>
+</section>
+
 <footer>
 
 <div class="footer-container">
@@ -1947,51 +2025,44 @@ function vaciarCarrito(){
    COMPRA
 ========================================== */
 
-function hacerCompra(){
-
-    if(carrito.length === 0){
-
-        alert(
-            "Tu carrito está vacío.\n\n" +
-            "Agregá un producto para continuar."
-        );
-
-        return;
-
+function abrirRegistro(){
+    const cliente = obtenerCliente();
+    if(cliente){
+        document.getElementById("clienteNombre").value = cliente.nombre || "";
+        document.getElementById("clienteCorreo").value = cliente.correo || "";
+        document.getElementById("clienteTelefono").value = cliente.telefono || "";
+        mostrarEstadoCliente("Ya estás registrado. Podés actualizar tus datos aquí.");
+    } else {
+        document.getElementById("formRegistro").reset();
+        document.getElementById("clienteEstado").style.display = "none";
     }
-
-
-    let total = carrito.reduce(
-
-        (suma, producto) =>
-
-        suma + producto.precio,
-
-        0
-
-    );
-
-
-    alert(
-
-        "¡Gracias por tu compra! 🛍️\n\n" +
-
-        "Total: $" +
-
-        total.toFixed(2)
-
-    );
-
-
-    carrito = [];
-
-    actualizarCarrito();
-
-    cerrarCarrito();
-
+    document.getElementById("registroBackdrop").classList.add("active");
 }
-
-
+function cerrarRegistro(){ document.getElementById("registroBackdrop").classList.remove("active"); }
+function cerrarRegistroSiFondo(event){ if(event.target.id === "registroBackdrop") cerrarRegistro(); }
+function obtenerCliente(){ try{return JSON.parse(localStorage.getItem("eclipseCliente") || "null");}catch(error){return null;} }
+function mostrarEstadoCliente(mensaje){const estado=document.getElementById("clienteEstado");estado.textContent=mensaje;estado.style.display="block";}
+document.getElementById("formRegistro").addEventListener("submit",function(event){
+    event.preventDefault();
+    const cliente={nombre:document.getElementById("clienteNombre").value.trim(),correo:document.getElementById("clienteCorreo").value.trim(),telefono:document.getElementById("clienteTelefono").value.trim()};
+    if(!cliente.nombre||!cliente.correo){alert("Completá tu nombre y correo electrónico.");return;}
+    try{localStorage.setItem("eclipseCliente",JSON.stringify(cliente));}catch(error){alert("No se pudieron guardar los datos en este navegador.");return;}
+    mostrarEstadoCliente("¡Registro guardado! Tus datos se usarán en el recibo de compra.");setTimeout(cerrarRegistro,900);
+});
+function hacerCompra(){
+    if(carrito.length===0){alert("Tu carrito está vacío.\n\nAgregá un producto para continuar.");return;}
+    const cliente=obtenerCliente();
+    if(!cliente){alert("Antes de finalizar la compra, registrá tus datos de cliente.");abrirRegistro();return;}
+    const total=carrito.reduce((suma,producto)=>suma+Number(producto.precio||0),0);
+    const numero="EA-"+Date.now().toString().slice(-8),fecha=new Date().toLocaleString("es-SV");
+    const filas=carrito.map(p=>`<tr><td>${escaparHTML(p.nombre)}</td><td>$${Number(p.precio).toFixed(2)}</td></tr>`).join("");
+    const recibo=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Recibo ${numero}</title><style>body{font-family:Arial,sans-serif;color:#302015;max-width:700px;margin:35px auto;padding:20px}h1{color:#8b4a20}.muted{color:#76685d;font-size:13px}.box{border:1px solid #d8c4af;border-radius:10px;padding:16px;margin:18px 0}table{width:100%;border-collapse:collapse;margin-top:18px}th,td{text-align:left;padding:11px;border-bottom:1px solid #e5d9cd}th{background:#f4e7d7}.total{text-align:right;font-size:22px;font-weight:bold;margin-top:20px}button{background:#5b2d16;color:white;border:0;padding:12px 18px;border-radius:8px;cursor:pointer}@media print{button{display:none}body{margin:0}}</style></head><body><h1>Eclipse Artesano</h1><div class="muted">Recibo de compra · ${escaparHTML(fecha)}</div><div class="box"><b>N.º de recibo:</b> ${numero}<br><b>Cliente:</b> ${escaparHTML(cliente.nombre)}<br><b>Correo:</b> ${escaparHTML(cliente.correo)}<br><b>Teléfono:</b> ${escaparHTML(cliente.telefono||"No proporcionado")}</div><table><thead><tr><th>Producto</th><th>Precio</th></tr></thead><tbody>${filas}</tbody></table><div class="total">Total: $${total.toFixed(2)}</div><p>¡Gracias por apoyar el arte hecho a mano!</p><button onclick="window.print()">Imprimir / Guardar recibo en PDF</button><p class="muted">Recibo demostrativo generado por la página web.</p></body></html>`;
+    const ventana=window.open("","_blank");
+    if(!ventana){alert("Permití las ventanas emergentes para poder generar el recibo.");return;}
+    ventana.document.open();ventana.document.write(recibo);ventana.document.close();
+    carrito=[];actualizarCarrito();cerrarCarrito();
+}
+function escaparHTML(valor){return String(valor??"").replace(/[&<>"']/g,caracter=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[caracter]));}
 
 /* ==========================================
    ESC PARA CERRAR CARRITO
@@ -2004,6 +2075,7 @@ document.addEventListener(
         if(event.key === "Escape"){
 
             cerrarCarrito();
+            cerrarRegistro();
 
         }
 
